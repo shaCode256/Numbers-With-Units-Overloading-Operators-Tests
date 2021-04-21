@@ -6,7 +6,6 @@
 #include <iostream>
 #include <cassert>
 
-
 using namespace ariel;
 
 void NumberWithUnits::read_units(ifstream &file)
@@ -30,7 +29,6 @@ NumberWithUnits NumberWithUnits::operator-=(NumberWithUnits &num)
 {
     return NumberWithUnits();
 }
-
 // comparison operators
 bool NumberWithUnits::operator==(NumberWithUnits num)
 {
@@ -63,10 +61,12 @@ bool NumberWithUnits::operator!=(NumberWithUnits &num)
 }
 
 //ostream operations
-std::ostream& ariel::operator<<(ostream& output, const NumberWithUnits& num) {
+std::ostream &ariel::operator<<(ostream &output, const NumberWithUnits &num)
+{
     return (output << num._amount << '[' << num._unit << ']');
 }
 
-std::istream& ariel::operator>> (istream &input, NumberWithUnits &num) {
-    return input;    
+std::istream &ariel::operator>>(istream &input, NumberWithUnits &num)
+{
+    return input;
 }
